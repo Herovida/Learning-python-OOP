@@ -43,6 +43,11 @@ class RekeningPremium(Rekening):
         super().info()
         print(f"Limit tarik harian: Rp{self.limit_tarik_harian}")
 
+    def tambah_bunga(self):
+        bunga = self.saldo * 0.05
+        self.saldo += bunga
+        print(f"Bunga ditambahkan: Rp{bunga}")
+
 r1 = Rekening("Budi", 500000)
 r1.info()
 r1.setor(200000)
